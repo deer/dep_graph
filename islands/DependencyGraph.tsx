@@ -125,7 +125,7 @@ export default function DependencyGraph() {
           Clear Graph
         </button>
       </div>
-      <div ref={container} className="w-full grow border-2 border-gray-600" />
+      <div ref={container} class="w-full grow border-2 border-gray-600" />
     </div>
   );
 }

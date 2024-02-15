@@ -2,7 +2,7 @@ import { Handlers } from "$fresh/server.ts";
 import {
   createGraph,
   ModuleGraphJson,
-} from "https://deno.land/x/deno_graph@0.65.1/mod.ts";
+} from "https://deno.land/x/deno_graph@0.66.0/mod.ts";
 import { Edge, Node } from "../../utils/types.ts";
 
 export const handler: Handlers = {
