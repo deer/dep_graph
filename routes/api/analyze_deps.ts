@@ -2,7 +2,7 @@ import { Handlers } from "$fresh/server.ts";
 import {
   createGraph,
   ModuleGraphJson,
-} from "https://deno.land/x/deno_graph@0.66.0/mod.ts";
+} from "https://deno.land/x/deno_graph@0.67.0/mod.ts";
 import { Edge, Node } from "../../utils/types.ts";
 
 export const handler: Handlers = {
@@ -67,7 +67,7 @@ export const handler: Handlers = {
 
     try {
       const graph = await createGraph([module]);
-      console.log(graph);
+      // console.log(graph);
 
       const nodes = getDependencies(module, 1, graph).slice(0, maxNodes);
 
