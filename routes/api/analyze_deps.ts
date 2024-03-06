@@ -2,7 +2,7 @@ import { Handlers } from "$fresh/server.ts";
 import {
   createGraph,
   ModuleGraphJson,
-} from "https://deno.land/x/deno_graph@0.67.0/mod.ts";
+} from "https://deno.land/x/deno_graph@0.69.6/mod.ts";
 import { Edge, Node } from "../../utils/types.ts";
 
 export const handler: Handlers = {
@@ -17,7 +17,6 @@ export const handler: Handlers = {
       url.searchParams.get("numberOfLayers") ?? "2",
       10,
     );
-    console.log({ module, maxNodes, numberOfLayers });
     if (!module) {
       return new Response(
         JSON.stringify({ error: "Module parameter is required" }),
@@ -26,6 +25,31 @@ export const handler: Handlers = {
           headers: { "Content-Type": "application/json" },
         },
       );
+    }
+    console.log({ module, maxNodes, numberOfLayers });
+    try {
+      const moduleURL = new URL(module);
+      if (!["http:", "https:", "file:"].includes(moduleURL.protocol)) {
+        return new Response(
+          JSON.stringify({
+            error: "Only http(s) and file protocols are supported.",
+          }),
+          {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+          },
+        );
+      }
+    } catch (error) {
+      if (error instanceof TypeError) {
+        return new Response(
+          JSON.stringify({ error: "Invalid module URL" }),
+          {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+          },
+        );
+      }
     }
 
     function getDependencies(

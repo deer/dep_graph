@@ -42,6 +42,8 @@ export default function DependencyGraph() {
         }
       });
     } else {
+      const errorData = await response.json();
+      console.error(errorData.error);
       console.error("Failed to analyze dependencies");
     }
   };

@@ -22,15 +22,15 @@
   ],
   "imports": {
     "$fresh/": "https://raw.githubusercontent.com/deer/fresh/6e378e403739350f7ddc2cb9f3f0cdae1ee2dfe9/",
-    "preact": "https://esm.sh/preact@10.19.5",
-    "preact/": "https://esm.sh/preact@10.19.5/",
+    "preact": "https://esm.sh/preact@10.19.6",
+    "preact/": "https://esm.sh/preact@10.19.6/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "vis-network": "https://esm.sh/vis-network@9.1.9/standalone",
-    "$std/": "https://deno.land/std@0.216.0/"
+    "$std/": "https://deno.land/std@0.218.2/"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
